@@ -23,6 +23,9 @@ Copy code
 pip install tensorflow==1.15.0
 pip install numpy
 pip install opencv-python
+
+## See Releases for datasets or use "links to datasets.txt" to access them via google drive
+
 Model Checkpoint
 Ensure you have the pre-trained GAN model checkpoint files saved in the ./models/ directory:
 
@@ -38,10 +41,8 @@ output_image_path: Path to save the generated image.
 checkpoint_path: Path to the model checkpoint.
 image_size: Size of the generated image.
 latent_dim: Dimension of the latent space.
-Example Usage
-python
-Copy code
-python generate_image.py
+
+generate_image.py
 The script will generate a single image and save it to the specified output path.
 
 Generating a Video
@@ -55,25 +56,12 @@ image_size: Size of the generated images.
 latent_dim: Dimension of the latent space.
 num_frames: Number of frames to generate for the video.
 fps: Frames per second for the generated video.
-Example Usage
-python
-Copy code
+
 python generate_video.py
+
 The script will preprocess the input image, generate frames from the latent space, and save the video to the specified output path.
 
-File Structure
-arduino
-Copy code
-gan-image-video-generation/
-│
-├── models/
-│   ├── model.ckpt.meta
-│   ├── model.ckpt.index
-│   └── model.ckpt.data-00000-of-00001
-│
-├── generate_image.py
-├── generate_video.py
-├── README.md
+
 Notes
 Ensure the tensor names like 'generator_499/out:0' and 'input_z:0' match your actual model's tensor names.
 Verify that your model checkpoint path is correct.
